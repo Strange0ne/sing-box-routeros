@@ -2,6 +2,12 @@ name: Build and Push to Dockerhub
 
 on:
   workflow_dispatch:
+    inputs:
+     image_tag:
+        description: 'Official image tag to use'
+        required: true
+        default: 'latest'
+        type: string
   push:
     branches:
       - main
@@ -12,7 +18,6 @@ permissions:
 
 env:
   IMAGE_NAME: sing-box-routeros
-  IMAGE_TAG: latest
 
 jobs:
   build-and-push:
@@ -38,5 +43,5 @@ jobs:
         with:
           file: Dockerfile
           push: true
-          tags: ghcr.io/seemsfishy/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+          tags: ghcr.io/seemsfishy/${{ env.IMAGE_NAME }}:${{ inputs.image_tag }}
           builder: ${{ steps.buildx.outputs.name }}
