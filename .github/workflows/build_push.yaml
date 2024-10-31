@@ -1,4 +1,4 @@
-name: Build and Push to Dockerhub
+name: Build and Push to ghcr.io
 
 on:
   workflow_dispatch:
@@ -8,9 +8,6 @@ on:
         required: true
         default: 'latest'
         type: string
-  push:
-    branches:
-      - main
 
 permissions:
   contents: read
