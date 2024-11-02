@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 ghcr.io/sagernet/sing-box:latest AS main
+FROM ghcr.io/sagernet/sing-box:latest AS main
 LABEL maintainer="Dhuran"
 RUN set -ex \
     && apk upgrade \
