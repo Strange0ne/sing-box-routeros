@@ -4,6 +4,6 @@ RUN set -ex \
     && apk upgrade \
     && apk add iptables iptables-legacy\
     && rm -rf /var/cache/apk/* \
-#    && rm /sbin/iptables \
-    && ln -s /sbin/iptables-legacy /sbin/iptables
+    && rm /usr/sbin/iptables \
+    && ln -s /usr/sbin/iptables-legacy /usr/sbin/iptables
 ENTRYPOINT ["sing-box"]
