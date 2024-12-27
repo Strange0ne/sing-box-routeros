@@ -1,4 +1,4 @@
-FROM ghcr.io/sagernet/sing-box:latest AS main
+FROM ghcr.io/sagernet/sing-box:1.11.0-beta.15 AS main
 LABEL maintainer="Dhuran"
 RUN set -ex \
     && apk upgrade \
